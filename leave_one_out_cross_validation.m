@@ -3,11 +3,11 @@ function accuracy= leave_one_out_cross_validation(data,current_set,feature_to_ad
 current_set = [current_set, feature_to_add];
 if ~isempty(current_set)
     for j = 2 : size(data,2)            %for each column in data after the class column
-       for l = 1 : length(current_set)      %for each column number in current set
-           if j ~= current_set(l) + 1           %if data column num != current set column num
-                data(:,j) = 0;                      %set column values to 0
-           end
-       end
+        
+        % how to check if an element is part of an array
+        % https://www.mathworks.com/matlabcentral/answers/354424-how-to-check-a-number-is-in-a-array-or-not
+        if ~(ismember((j-1), current_set))
+            data(:,j) = 0;
     end
 end
 
