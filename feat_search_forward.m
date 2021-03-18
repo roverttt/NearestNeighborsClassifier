@@ -16,7 +16,7 @@ for i = 1 : size(data,2)-1
         % Converting a list to a printable string
         % https://www.mathworks.com/matlabcentral/answers/341189-how-to-automatically-sprintf-an-array-elements
         
-        accuracy = 100*leave_one_out_cross_validation(data,current_set_of_features,k);
+        accuracy = 100*leave_one_out_cross_validation(data,current_set_of_features,k,true);
         stringToPrint1 = sprintf('%d,',[current_set_of_features, k]);
         stringToPrint1 = stringToPrint1(1:end-1);
         stringToPrint2 = sprintf('Using feature(s) {%s} accuracy is %s%%', stringToPrint1, num2str(accuracy,3));

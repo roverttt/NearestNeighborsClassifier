@@ -36,8 +36,11 @@ data_class_column = data(:,1);
 normalized_data = normalize(data_for_normalization,1);
 disp(['Done!'])
 data_to_pass_in = [data_class_column normalized_data];
-feat_search_forward(data_to_pass_in);
-
+if(usr_input == 1)
+    feat_search_forward(data_to_pass_in);
+elseif(usr_input == 2)
+    feat_search_backward_elim(data_to_pass_in);
+end
 %Add new column
 %Arr = [Arr NewCol];
 

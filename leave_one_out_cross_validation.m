@@ -1,6 +1,16 @@
-function accuracy= leave_one_out_cross_validation(data,current_set,feature_to_add)
+function accuracy= leave_one_out_cross_validation(data,current_set,feature,mode_f_or_b)
 
-current_set = [current_set, feature_to_add];
+% How to remove an element from a vector:
+% https://www.mathworks.com/matlabcentral/answers/48938-delete-element-from-vector
+% If you want to get rid of all cases where a is exactly equal to 3
+% b = a(a~=3);
+
+if(mode_f_or_b)
+    current_set = [current_set, feature];
+else
+    current_set = current_set(current_set ~= feature);
+end
+
 if ~isempty(current_set)
     for j = 2 : size(data,2)            %for each column in data after the class column
         
@@ -8,9 +18,9 @@ if ~isempty(current_set)
         % https://www.mathworks.com/matlabcentral/answers/354424-how-to-check-a-number-is-in-a-array-or-not
         if ~(ismember((j-1), current_set))
             data(:,j) = 0;
+        end
     end
 end
-
 number_correctly_classfied = 0;
 
  for i = 1 : size(data,1)
