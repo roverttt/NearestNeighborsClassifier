@@ -7,7 +7,7 @@ function main_nn()
 % how to normalize data https://www.mathworks.com/help/matlab/ref/double.normalize.html
 
 
-disp(['Welcome to Trevor Cappon's Feature Selection Algorithm.']);
+disp(['Welcome to Trevor Cappons Feature Selection Algorithm.']);
 disp(['Type in the name of the file to test :']);
 inputfilename = input('','s');
 data = load(inputfilename);
