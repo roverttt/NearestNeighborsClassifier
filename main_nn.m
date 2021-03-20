@@ -7,7 +7,7 @@ function main_nn()
 % how to normalize data https://www.mathworks.com/help/matlab/ref/double.normalize.html
 
 
-disp(['Welcome to Bertie Woosters Feature Selection Algorithm.']);
+disp(['Welcome to Trevor Cappon's Feature Selection Algorithm.']);
 disp(['Type in the name of the file to test :']);
 inputfilename = input('','s');
 data = load(inputfilename);
@@ -31,7 +31,7 @@ string1 = sprintf('This dataset has %d features (not including the class attribu
     size(data,2)-1, size(data,1));
 
 disp(string1);
-disp(['Please wait while I normalize the data…']);
+disp(['Please wait while I normalize the dataâ€¦']);
 data_class_column = data(:,1);
 normalized_data = normalize(data_for_normalization,1);
 disp(['Done!'])
